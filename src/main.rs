@@ -9,14 +9,21 @@ fn print_balance(account: &BankAccount){
 fn print_verified(account: &BankAccount){
     println!("{:?}", account.balance)
 }
-fn is_verified(account: &BankAccount){
-
+fn is_verified(account: &BankAccount) -> Result<bool, bool> {
+    match account.verified{
+        true => Ok(true),
+        false => Err(false)
+    }
 }
 fn main() {
     let my_account = BankAccount{
         balance: 20,
         verified: true
     };
+    let verification_status = is_verified(&my_account);
+
     print_balance(&my_account);
     print_verified(&my_account);
+
+    println!("{:?}", verification_status);
 }
