@@ -4,10 +4,10 @@ struct BankAccount{
 }
 
 fn print_balance(account: &BankAccount){
-    println!("{:?}", account.balance)
+    // println!("{:?}", account.balance)
 }
 fn print_verified(account: &BankAccount){
-    println!("{:?}", account.balance)
+    // println!("{:?}", account.verified)
 }
 fn is_verified(account: &BankAccount) -> Result<bool, bool> {
     match account.verified{
@@ -18,7 +18,7 @@ fn is_verified(account: &BankAccount) -> Result<bool, bool> {
 fn main() {
     let my_account = BankAccount{
         balance: 20,
-        verified: true
+        verified: false
     };
     let verification_status = is_verified(&my_account);
 
